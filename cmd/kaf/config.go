@@ -7,8 +7,8 @@ import (
 
 	"regexp"
 
+	"github.com/Ackar/kaf/pkg/config"
 	"github.com/IBM/sarama"
-	"github.com/birdayz/kaf/pkg/config"
 	"github.com/manifoldco/promptui"
 	"github.com/spf13/cobra"
 )

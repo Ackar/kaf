@@ -13,9 +13,9 @@ import (
 
 	"time"
 
-	"github.com/Masterminds/sprig"
+	"github.com/Ackar/kaf/pkg/partitioner"
 	"github.com/IBM/sarama"
-	"github.com/birdayz/kaf/pkg/partitioner"
+	"github.com/Masterminds/sprig"
 	pb "github.com/golang/protobuf/proto"
 	"github.com/spf13/cobra"
 )

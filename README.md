@@ -1,9 +1,9 @@
 # Kaf
 Kafka CLI inspired by kubectl & docker
 
-[![Actions Status](https://github.com/birdayz/kaf/workflows/Go/badge.svg)](https://github.com/birdayz/kaf/actions)
-[![GoReportCard](https://goreportcard.com/badge/github.com/birdayz/kaf)](https://goreportcard.com/report/github.com/birdayz/kaf)
-[![GoDoc](https://godoc.org/github.com/birdayz/kaf?status.svg)](https://godoc.org/github.com/birdayz/kaf)
+[![Actions Status](https://github.com/Ackar/kaf/workflows/Go/badge.svg)](https://github.com/Ackar/kaf/actions)
+[![GoReportCard](https://goreportcard.com/badge/github.com/Ackar/kaf)](https://goreportcard.com/report/github.com/Ackar/kaf)
+[![GoDoc](https://godoc.org/github.com/Ackar/kaf?status.svg)](https://godoc.org/github.com/Ackar/kaf)
 ![AUR version](https://img.shields.io/aur/version/kaf-bin)
 
 ![asciicinema](asciicinema.gif)
@@ -12,7 +12,7 @@ Kafka CLI inspired by kubectl & docker
 Install via Go from source:
 
 ```
-go install github.com/birdayz/kaf/cmd/kaf@latest
+go install github.com/Ackar/kaf/cmd/kaf@latest
 ```
 
 Install via install script:

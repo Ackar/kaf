@@ -15,8 +15,8 @@ import (
 
 	"sync"
 
+	"github.com/Ackar/kaf/pkg/streams"
 	"github.com/IBM/sarama"
-	"github.com/birdayz/kaf/pkg/streams"
 	"github.com/manifoldco/promptui"
 	"github.com/spf13/cobra"
 

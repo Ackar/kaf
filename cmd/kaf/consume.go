@@ -10,9 +10,9 @@ import (
 	"sync"
 	"text/tabwriter"
 
+	"github.com/Ackar/kaf/pkg/avro"
+	"github.com/Ackar/kaf/pkg/proto"
 	"github.com/IBM/sarama"
-	"github.com/birdayz/kaf/pkg/avro"
-	"github.com/birdayz/kaf/pkg/proto"
 	"github.com/golang/protobuf/jsonpb"
 	prettyjson "github.com/hokaccha/go-prettyjson"
 	"github.com/spf13/cobra"
