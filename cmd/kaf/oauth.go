@@ -8,6 +8,7 @@ import (
 
 	"github.com/IBM/sarama"
 	aws_signer "github.com/aws/aws-msk-iam-sasl-signer-go/signer"
+	"github.com/aws/aws-sdk-go-v2/aws"
 	aws_config "github.com/aws/aws-sdk-go-v2/config"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/clientcredentials"
@@ -47,11 +48,19 @@ func newTokenProvider() *tokenProvider {
 
 		// token either from tokenURL, static or AWS API
 		if cluster.SASL.Mechanism == "AWS_MSK_IAM" {
-			cfg, err := aws_config.LoadDefaultConfig(ctx)
+			var cfg aws.Config
+			var err error
+			if cluster.SASL.Profile != "" {
+				cfg, err = aws_config.LoadDefaultConfig(ctx,
+					aws_config.WithSharedConfigProfile(cluster.SASL.Profile),
+				)
+			} else {
+				cfg, err = aws_config.LoadDefaultConfig(ctx)
+			}
 			if err != nil {
 				errorExit("Could not load AWS config: " + err.Error())
 			}
-			token, _, err := aws_signer.GenerateAuthToken(ctx, cfg.Region)
+			token, _, err := aws_signer.GenerateAuthTokenFromCredentialsProvider(ctx, cfg.Region, cfg.Credentials)
 			if err != nil {
 				errorExit("Could not generate auth token: " + err.Error())
 			}
